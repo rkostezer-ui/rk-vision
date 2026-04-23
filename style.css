@@ -76,7 +76,22 @@ body {
     font-weight: bold;
     color: #ffffff;
     text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
+
+.logo-img {
+    height: 32px;
+    width: auto;
+    display: block;
+}
+
+/* Optional: Nur Logo ohne Text anzeigen
+.logo-img + span {
+    display: none;
+}
+*/
 
 .nav-menu {
     display: flex;
@@ -142,6 +157,24 @@ body {
     margin-bottom: 40px;
     display: inline-block;
     background: rgba(255,255,255,0.05);
+    max-width: 300px;
+}
+
+.hero-logo-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Optional: Fallback ausblenden, wenn echtes Bild vorhanden ist
+.hero-logo-img:not([src*="placeholder"]) + .hero-logo-fallback {
+    display: none;
+}
+*/
+
+/* Wenn das Bild fehlt, zeige Fallback */
+.hero-logo-img[src=""], .hero-logo-img:not([src]) {
+    display: none;
 }
 
 .hero-logo h1 {
@@ -237,6 +270,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+.icon-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+/* Fallback Logik */
+.icon-img[src$=".svg"] + .icon-fallback {
+    display: none;
 }
 
 .service-title {
@@ -285,6 +330,22 @@ body {
     justify-content: center;
     font-size: 36px;
     color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.asset-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Fallback Logik */
+.asset-img[src] + .img-fallback {
+    display: none;
 }
 
 .project-content {
@@ -796,6 +857,21 @@ body {
     color: #ffffff;
     flex-shrink: 0;
     font-weight: bold;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.member-img[src] + .member-fallback {
+    display: none;
 }
 
 .member-info h3 {
@@ -882,3 +958,281 @@ body {
 }
 
 /* ===== end appended page-specific styles ===== */
+
+/* ===== Einheitliches Site-Theme (frisch, elegant, anthrazit) ===== */
+.site-theme {
+    font-family: 'Segoe UI Variable Text', 'Inter', 'Segoe UI', Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, #2a2f36 0%, transparent 40%),
+        radial-gradient(circle at 80% 0%, #242a31 0%, transparent 35%),
+        linear-gradient(145deg, #161a1f 0%, #1f242c 45%, #15191e 100%);
+    color: #f1f3f5;
+    letter-spacing: 0.01em;
+}
+
+.site-theme h1,
+.site-theme h2,
+.site-theme h3,
+.site-theme .page-title,
+.site-theme .section-title,
+.site-theme .company-name,
+.site-theme .cta-title {
+    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    letter-spacing: 0.02em;
+}
+
+.site-theme .background-texture {
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.03) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255,255,255,0.02) 1px, transparent 1px);
+    background-size: 46px 46px;
+    opacity: 0.75;
+}
+
+.site-theme .background-structure {
+    opacity: 0.5;
+    background-image:
+        linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.03) 25%, transparent 50%, rgba(255,255,255,0.02) 75%, transparent 100%),
+        linear-gradient(45deg, transparent 0%, rgba(255,255,255,0.015) 50%, transparent 100%);
+}
+
+.site-theme .navigation {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    box-shadow: none;
+}
+
+.site-theme .nav-logo {
+    gap: 10px;
+    font-weight: bold;
+    letter-spacing: normal;
+}
+
+.site-theme .nav-menu {
+    gap: 12px;
+}
+
+.site-theme .nav-item a {
+    display: inline-block;
+    padding: 8px 13px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: linear-gradient(160deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04));
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.24);
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.site-theme .nav-item a:hover,
+.site-theme .nav-item a.active {
+    background: linear-gradient(160deg, rgba(255,255,255,0.3), rgba(255,255,255,0.12));
+    border-color: rgba(255, 255, 255, 0.48);
+    transform: translateY(-2px);
+}
+
+.site-theme .logo-img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    filter: none;
+}
+
+.site-theme .hero {
+    padding-top: 120px;
+}
+
+.site-theme .hero-content {
+    max-width: 920px;
+    margin-bottom: 72px;
+}
+
+.site-theme .hero-logo {
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 18px;
+    padding: 24px 28px;
+    background: linear-gradient(165deg, rgba(255,255,255,0.12), rgba(255,255,255,0.03));
+    backdrop-filter: blur(6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+    max-width: 360px;
+}
+
+.site-theme .hero-logo-img {
+    width: 100%;
+    max-height: 170px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.site-theme .hero-logo-fallback {
+    display: none;
+}
+
+.site-theme .hero-logo-img[src=""],
+.site-theme .hero-logo-img:not([src]) {
+    display: none;
+}
+
+.site-theme .hero-logo-img[src=""] + .hero-logo-fallback,
+.site-theme .hero-logo-img:not([src]) + .hero-logo-fallback {
+    display: block;
+}
+
+.site-theme .company-name {
+    font-size: clamp(1.9rem, 3.4vw, 3rem);
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+}
+
+.site-theme .tagline {
+    font-size: clamp(1.05rem, 1.75vw, 1.35rem);
+    line-height: 1.65;
+    color: #d5d9de;
+    max-width: 900px;
+}
+
+.site-theme .services-preview,
+.site-theme .contact-section,
+.site-theme .cta-section {
+    background: rgba(10, 12, 16, 0.34);
+}
+
+.site-theme .service-card,
+.site-theme .project-card,
+.site-theme .contact-item,
+.site-theme .content-section,
+.site-theme .team-section,
+.site-theme .faq-item {
+    background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
+}
+
+.site-theme .service-card:hover,
+.site-theme .project-card:hover,
+.site-theme .contact-item:hover,
+.site-theme .faq-item:hover,
+.site-theme .content-section:hover,
+.site-theme .team-section:hover {
+    background: linear-gradient(160deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+    border-color: rgba(255, 255, 255, 0.28);
+    transform: translateY(-6px);
+}
+
+.site-theme .project-title,
+.site-theme .service-title,
+.site-theme .cta-title {
+    color: #f8f9fa;
+}
+
+/* Elegantere Gestaltung der Obertitel */
+.site-theme .page-title,
+.site-theme .section-title {
+    color: #f8f9fa;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    line-height: 1.2;
+}
+
+.site-theme .page-header .page-title,
+.site-theme .section-header .section-title {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 14px;
+    background: linear-gradient(180deg, #ffffff 0%, #dbe2ea 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+}
+
+.site-theme .page-header .page-title::after,
+.site-theme .section-header .section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: min(130px, 60%);
+    height: 2px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.9), rgba(255,255,255,0));
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.28);
+}
+
+.site-theme .content-section .section-title,
+.site-theme .team-section .section-title,
+.site-theme .faq-section .section-title {
+    position: relative;
+    padding-left: 18px;
+}
+
+.site-theme .content-section .section-title::before,
+.site-theme .team-section .section-title::before,
+.site-theme .faq-section .section-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.2em;
+    height: 1.05em;
+    width: 3px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.3));
+}
+
+.site-theme .section-subtitle,
+.site-theme .page-subtitle,
+.site-theme .project-description,
+.site-theme .service-description,
+.site-theme .section-text,
+.site-theme .value-description,
+.site-theme .member-description,
+.site-theme .contact-text,
+.site-theme .faq-answer,
+.site-theme .cta-text {
+    color: #d2d7dd;
+}
+
+.site-theme .cta-button {
+    background: linear-gradient(160deg, rgba(255,255,255,0.22), rgba(255,255,255,0.08));
+    border: 1px solid rgba(255,255,255,0.34);
+    border-radius: 999px;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.site-theme .cta-button:hover {
+    background: linear-gradient(160deg, rgba(255,255,255,0.34), rgba(255,255,255,0.14));
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .site-theme .hero {
+        padding-top: 102px;
+    }
+
+    .site-theme .hero-logo {
+        padding: 18px 20px;
+        max-width: 280px;
+    }
+
+    .site-theme .logo-img {
+        height: 32px;
+    }
+
+    .site-theme .page-header .page-title,
+    .site-theme .section-header .section-title {
+        padding-bottom: 10px;
+    }
+
+    .site-theme .page-header .page-title::after,
+    .site-theme .section-header .section-title::after {
+        width: min(105px, 58%);
+    }
+}

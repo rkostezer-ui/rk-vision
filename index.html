@@ -12,13 +12,16 @@
     <title>RK-Vision GmbH | Gebäudeautomation für EFH und MFH | Obere Bahnhofstrasse 52, Wil, Switzerland</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="site-theme">
     <div class="background-texture"></div>
     <div class="background-structure"></div>
     
     <nav class="navigation">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">RK-Vision</a>
+            <a href="index.html" class="nav-logo">
+                <img src="assets/icons/Logo.avif" alt="RK-Vision Logo" class="logo-img">
+                <span>RK-Vision</span>
+            </a>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="index.html" class="active">Home</a></li>
                 <li class="nav-item"><a href="dienstleistungen.html">Dienstleistungen</a></li>
@@ -39,12 +42,16 @@
         <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-logo">
-                    <h1>RK</h1>
-                    <div class="vision">VISION</div>
+                    <img src="assets/icons/Logo.avif" alt="RK-Vision" class="hero-logo-img">
+                    <!-- Fallback falls kein Bild vorhanden ist -->
+                    <div class="hero-logo-fallback">
+                        <h1>RK</h1>
+                        <div class="vision">VISION</div>
+                    </div>
                 </div>
                 <div class="company-name">RK-Vision GmbH</div>
                 <div class="tagline">
-                    Ihr Partner für Elektrodienstleistungen im Bereich der Gebäudeautomation, unabhängigen Elektroplanung, Hard- und Softwareengineering sowie Energieoptimierung
+                    Ihr Partner für Elektrodienstleistungen im Bereich der Gebäudeautomation, Elektroplanung sowie Hard- und Softwareengineering.
                 </div>
             </div>
         </div>
@@ -54,57 +61,43 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">Unsere Dienstleistungen</h2>
-                <p class="section-subtitle">Professionelle Lösungen für moderne Gebäudetechnik</p>
+
             </div>
 
             <div class="services-grid">
                 <div class="service-card" data-href="dienstleistungen.html#automation" role="link" tabindex="0">
-                    <div class="service-icon">■</div>
+                    <div class="service-icon">
+                        <img src="assets/icons/automation.svg" alt="" class="icon-img">
+                        <span class="icon-fallback">■</span>
+                    </div>
                     <h3 class="service-title">Gebäudeautomation</h3>
                     <p class="service-description">
-                        Intelligente Steuerungssysteme für Ein- und Mehrfamilienhäuser mit KNX/EIB Technologie.
+                        Professionelle Beratung, massgeschneiderte Entwicklung und fachgerechte Inbetriebnahme für Ihr smartes Projekt.
                     </p>
                 </div>
 
                 <div class="service-card" data-href="dienstleistungen.html#planning" role="link" tabindex="0">
-                    <div class="service-icon">▲</div>
+                    <div class="service-icon">
+                        <img src="assets/icons/planning.svg" alt="" class="icon-img">
+                        <span class="icon-fallback">▲</span>
+                    </div>
                     <h3 class="service-title">Elektroplanung</h3>
                     <p class="service-description">
-                        Herstellerunabhängige Elektroplanung für Neu- und Umbauten mit modernsten Standards.
+                        strategische Beratung, technische Apparate- und Ausführungsplanung sowie normgerechte NPK-Ausschreibungen
                     </p>
                 </div>
 
                 <div class="service-card" data-href="dienstleistungen.html#engineering" role="link" tabindex="0">
-                    <div class="service-icon">●</div>
-                    <h3 class="service-title">Engineering</h3>
+                    <div class="service-icon">
+                        <img src="assets/icons/engineering.svg" alt="" class="icon-img">
+                        <span class="icon-fallback">●</span>
+                    </div>
+                    <h3 class="service-title">Hard- und Softwareengineering</h3>
                     <p class="service-description">
                         Hard- und Softwareentwicklung für kundenspezifische Automatisierungslösungen.
                     </p>
                 </div>
-
-                <div class="service-card" data-href="dienstleistungen.html#energy" role="link" tabindex="0">
-                    <div class="service-icon">◆</div>
-                    <h3 class="service-title">Energieoptimierung</h3>
-                    <p class="service-description">
-                        Analyse und Optimierung des Energieverbrauchs für nachhaltige Gebäudetechnik.
-                    </p>
-                </div>
-
-                <div class="service-card" data-href="dienstleistungen.html#security" role="link" tabindex="0">
-                    <div class="service-icon">◩</div>
-                    <h3 class="service-title">Sicherheits- und Datenschutzberatung</h3>
-                    <p class="service-description">
-                        Beratung zu IT-Sicherheit und Datenschutz in der Gebäudeautomation — Risikoanalyse, Konzepte und Audits.
-                    </p>
-                </div>
-
-                <div class="service-card" data-href="dienstleistungen.html#maintenance" role="link" tabindex="0">
-                    <div class="service-icon">◧</div>
-                    <h3 class="service-title">Wartung und Support</h3>
-                    <p class="service-description">
-                        Regelmässige Wartung, Fernwartung und schneller Support für stabile und sichere Systembetriebe.
-                    </p>
-                </div>
+                    
             </div>
         </div>
     </section>
@@ -113,36 +106,45 @@
         <div class="section-container">
             <div class="section-header">
                 <h2 class="section-title">Aktuelle Projekte</h2>
-                <p class="section-subtitle">Referenzen und realisierte Lösungen</p>
+  
             </div>
 
             <div class="projects-grid">
                 <div class="project-card" data-href="projekte.html" role="link" tabindex="0">
-                    <div class="project-image">■</div>
+                    <div class="project-image">
+                        <img src="assets/icons/Projektbild_MFH_Flums.jpeg" alt="Neubau Wohnüberbauung Löwenstrasse Flums" class="asset-img">
+                        <span class="img-fallback">■</span>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Mehrfamilienhaus Wil</h3>
+                        <h3 class="project-title">Neubau Wohnüberbauung Löwenstrasse Flums</h3>
                         <p class="project-description">
-                            Komplette KNX-Installation für 12 Wohneinheiten mit zentraler Visualisierung.
+                            vom Elektrokonzept, über Ausschreibung bis zur Ausführungsplanung. In Flums entstehen 14 Wohneinheiten mit hohem Ausbaustandard.
                         </p>
                     </div>
                 </div>
 
                 <div class="project-card" data-href="projekte.html" role="link" tabindex="0">
-                    <div class="project-image">▲</div>
+                    <div class="project-image">
+                        <img src="assets/icons/Projektbild_MFH_Oberuzwil.jpeg" alt="Neubau Mehrfamilienhaus B27 Oberuzwil" class="asset-img">
+                        <span class="img-fallback">▲</span>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Smart Home Uzwil</h3>
+                        <h3 class="project-title">Neubau Mehrfamilienhaus B27 Oberuzwil</h3>
                         <p class="project-description">
-                            Intelligente Haussteuerung mit PV-Anlage und Batteriespeicher.
+                            vom Elektrokonzept, über Ausschreibung bis zur Ausführungsplanung. In Oberuzwil entstehen 14 Wohneinheiten mit hohem Ausbaustandard.
                         </p>
                     </div>
                 </div>
 
                 <div class="project-card" data-href="projekte.html" role="link" tabindex="0">
-                    <div class="project-image">●</div>
+                    <div class="project-image">
+                        <img src="assets/img/athens.jpg" alt="Neubau Mehrfamilienhaus Schlosspark Sargans" class="asset-img">
+                        <span class="img-fallback">●</span>
+                    </div>
                     <div class="project-content">
-                        <h3 class="project-title">Produktionshalle Gossau</h3>
+                        <h3 class="project-title">Neubau Mehrfamilienhaus Schlosspark Sargans</h3>
                         <p class="project-description">
-                            Energiemanagementsystem für 2000 m² Produktionsfläche.
+                            vom Elektrokonzept, über Ausschreibung bis zur Ausführungsplanung. In Sargans entstehen 18 Wohneinheiten mit hohem Ausbaustandard.
                         </p>
                     </div>
                 </div>
@@ -159,22 +161,55 @@
 
             <div class="contact-grid">
                 <a href="mailto:office@rk-vision.ch" class="contact-item">
-                    <div class="contact-icon">@</div>
+                    <div class="contact-icon">
+                        <!-- E-Mail Icon (rot) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#EA4335" style="width:1.5rem;height:1.5rem;">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </div>
                     <div class="contact-text">office@rk-vision.ch</div>
                 </a>
 
                 <a href="tel:+41796776373" class="contact-item">
-                    <div class="contact-icon">☎</div>
+                    <div class="contact-icon">
+                        <!-- Telefon Icon (grün) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#34A853" style="width:1.5rem;height:1.5rem;">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                    </div>
                     <div class="contact-text">+41 79 677 63 73</div>
                 </a>
 
                 <a href="https://www.google.com/maps/search/?api=1&query=RK-Vision+GmbH+Obere+Bahnhofstrasse+52+9500+Wil+SG" target="_blank" class="contact-item">
-                    <div class="contact-icon">⌂</div>
+                    <div class="contact-icon">
+                        <!-- Google Maps / Standort Icon (rot) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#EA4335" style="width:1.5rem;height:1.5rem;">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                    </div>
                     <div class="contact-text">
                         RK-Vision GmbH<br>
                         Obere Bahnhofstrasse 52<br>
                         9500 Wil SG
                     </div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/raffael-kostezer-918b09198" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <div class="contact-icon">
+                        <!-- LinkedIn Icon (offizielles Blau) -->
+                        <img src="assets/icons/linkedin-icon-2.svg" alt="LinkedIn" class="icon-img" style="width:1.5rem;height:1.5rem;filter:invert(27%) sepia(97%) saturate(1200%) hue-rotate(183deg) brightness(95%) contrast(101%);">
+                    </div>
+                    <div class="contact-text">LinkedIn</div>
+                </a>
+
+                <a href="https://wa.me/41796776373" target="_blank" rel="noopener noreferrer" class="contact-item">
+                    <div class="contact-icon">
+                        <!-- WhatsApp Icon (offizielles Grün) -->
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" style="width:1.5rem;height:1.5rem;">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                    </div>
+                    <div class="contact-text">WhatsApp</div>
                 </a>
             </div>
 
