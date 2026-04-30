@@ -24,10 +24,4 @@
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    <url>
-        <loc>https://fpbehdac.manus.space/faq.html</loc>
-        <lastmod>2025-01-03</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
 </urlset>
