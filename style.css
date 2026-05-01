@@ -1117,6 +1117,49 @@ body {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.24);
 }
 
+/* Home: Bildhintergründe für Dienstleistungen mit transparenter Wirkung */
+.site-theme .services-preview .service-card {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.site-theme .services-preview .service-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.04);
+    transition: transform 0.35s ease;
+}
+
+.site-theme .services-preview .service-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(160deg, rgba(17, 21, 27, 0.72), rgba(17, 21, 27, 0.58));
+}
+
+.site-theme .services-preview .service-card:hover::before {
+    transform: scale(1.08);
+}
+
+.site-theme .services-preview .service-card--automation::before {
+    background-image: url('assets/img/service-automation.jpeg');
+}
+
+.site-theme .services-preview .service-card--planung::before {
+    background-image: url('assets/img/service-elektroplanung.jpeg');
+}
+
+.site-theme .services-preview .service-card--engineering::before {
+    background-image: url('assets/img/service-engineering.jpeg');
+}
+
 .site-theme .service-card:hover,
 .site-theme .project-card:hover,
 .site-theme .contact-item:hover,
