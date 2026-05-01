@@ -674,6 +674,12 @@ body {
     justify-content: center;
     font-size: 48px;
     color: #ffffff;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.project-card--after-new-list {
+    margin-top: 18px;
 }
 
 .project-content {
@@ -1126,6 +1132,20 @@ body {
 .site-theme .service-title,
 .site-theme .cta-title {
     color: #f8f9fa;
+}
+
+/* Projekte-Seite: Einheitliche Bildgrössen ohne Verzerrung */
+.page-projekte .project-image {
+    height: clamp(220px, 30vw, 320px);
+    padding: 0;
+}
+
+.page-projekte .project-image .asset-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Elegantere Gestaltung der Obertitel */
