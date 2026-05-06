@@ -87,4 +87,56 @@
         observer.observe(card);
     });
 
+    // Hero service typewriter (Home)
+    const typerEl = document.getElementById('serviceTyperText');
+    if (typerEl) {
+        const words = [
+            'Elektroplanung',
+            'Gebäudeautomation',
+            'Hardwareengineering',
+            'Softwareengineering'
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const typingSpeed = 85;
+        const deletingSpeed = 45;
+        const pauseAfterWord = 1300;
+        const pauseAfterDelete = 300;
+
+        function tick() {
+            const currentWord = words[wordIndex];
+
+            if (!deleting) {
+                charIndex++;
+                typerEl.textContent = currentWord.slice(0, charIndex);
+
+                if (charIndex === currentWord.length) {
+                    deleting = true;
+                    setTimeout(tick, pauseAfterWord);
+                    return;
+                }
+
+                setTimeout(tick, typingSpeed);
+                return;
+            }
+
+            charIndex--;
+            typerEl.textContent = currentWord.slice(0, charIndex);
+
+            if (charIndex === 0) {
+                deleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+                setTimeout(tick, pauseAfterDelete);
+                return;
+            }
+
+            setTimeout(tick, deletingSpeed);
+        }
+
+        tick();
+    }
+
 })();
