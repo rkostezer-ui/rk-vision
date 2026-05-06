@@ -464,6 +464,155 @@ body {
     font-weight: 300;
 }
 
+.contact-form-map-grid {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.contact-form-card,
+.map-card {
+    padding: 28px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.contact-form-map-grid > .contact-form-card,
+.contact-form-map-grid > .map-card {
+    width: 100%;
+}
+
+.contact-form-title {
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.contact-form-subtitle {
+    color: #cccccc;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-row {
+    display: grid;
+    gap: 8px;
+}
+
+.form-row label {
+    font-size: 14px;
+    color: #e0e0e0;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.22);
+    background: rgba(255,255,255,0.08);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 11px 12px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.form-row select {
+    background: rgba(17, 22, 28, 0.95);
+    color: #ffffff;
+    color-scheme: dark;
+}
+
+.form-row select option {
+    background-color: #11161c;
+    color: #ffffff;
+}
+
+.form-row select option:disabled {
+    color: #a9b3bc;
+}
+
+.form-row input::placeholder,
+.form-row textarea::placeholder {
+    color: #b9c0c7;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+    outline: none;
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.12);
+}
+
+.form-checkbox-row {
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: start;
+}
+
+.form-checkbox-row input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: #25D366;
+}
+
+.form-checkbox-row label {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.contact-form .cta-button {
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.map-embed-wrap {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.2);
+    min-height: 360px;
+}
+
+.map-embed-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 360px;
+    border: 0;
+}
+
+.map-embed-wrap--dark {
+    position: relative;
+    background: #0f1217;
+}
+
+.map-embed-wrap--dark iframe {
+    filter: grayscale(1) invert(0.92) hue-rotate(180deg) saturate(0.75) contrast(0.95) brightness(0.9);
+}
+
+.map-embed-wrap--dark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(8, 12, 18, 0.28);
+    pointer-events: none;
+}
+
+.container-contact-page {
+    padding-top: 120px;
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
@@ -1116,6 +1265,8 @@ body {
 .site-theme .service-card,
 .site-theme .project-card,
 .site-theme .contact-item,
+.site-theme .contact-form-card,
+.site-theme .map-card,
 .site-theme .content-section,
 .site-theme .team-section,
 .site-theme .faq-item {
@@ -1171,6 +1322,8 @@ body {
 .site-theme .service-card:hover,
 .site-theme .project-card:hover,
 .site-theme .contact-item:hover,
+.site-theme .contact-form-card:hover,
+.site-theme .map-card:hover,
 .site-theme .faq-item:hover,
 .site-theme .content-section:hover,
 .site-theme .team-section:hover {
@@ -1262,9 +1415,23 @@ body {
 .site-theme .value-description,
 .site-theme .member-description,
 .site-theme .contact-text,
+.site-theme .contact-form-subtitle,
 .site-theme .faq-answer,
 .site-theme .cta-text {
     color: #d2d7dd;
+}
+
+.site-theme .form-row input,
+.site-theme .form-row select,
+.site-theme .form-row textarea {
+    background: linear-gradient(160deg, rgba(255,255,255,0.13), rgba(255,255,255,0.05));
+    border-color: rgba(255,255,255,0.22);
+}
+
+.site-theme .form-row input:focus,
+.site-theme .form-row select:focus,
+.site-theme .form-row textarea:focus {
+    border-color: rgba(255,255,255,0.55);
 }
 
 .site-theme .cta-button {
@@ -1305,5 +1472,16 @@ body {
     .site-theme .page-header .page-title::after,
     .site-theme .section-header .section-title::after {
         width: min(105px, 58%);
+    }
+
+    .contact-form-card,
+    .map-card {
+        padding: 20px;
+    }
+
+    .map-embed-wrap,
+    .map-embed-wrap iframe {
+        min-height: 300px;
+        height: 300px;
     }
 }
