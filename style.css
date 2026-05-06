@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', Arial, sans-serif;
     background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
     color: #ffffff;
     min-height: 100vh;
@@ -79,6 +81,12 @@ body {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+.brand-name {
+    font-family: 'Abril Fatface', serif;
+    font-weight: 400;
+    letter-spacing: 0.5px;
 }
 
 .logo-img {
@@ -194,8 +202,9 @@ body {
 }
 
 .company-name {
+    font-family: 'Abril Fatface', serif;
     font-size: 36px;
-    font-weight: 300;
+    font-weight: 400;
     letter-spacing: 2px;
     color: #cccccc;
     margin-bottom: 20px;
@@ -967,7 +976,7 @@ body {
 
 /* ===== Einheitliches Site-Theme (frisch, elegant, anthrazit) ===== */
 .site-theme {
-    font-family: 'Segoe UI Variable Text', 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-family: 'Montserrat', 'Segoe UI Variable Text', 'Inter', 'Segoe UI', Arial, sans-serif;
     background:
         radial-gradient(circle at 20% 10%, #2a2f36 0%, transparent 40%),
         radial-gradient(circle at 80% 0%, #242a31 0%, transparent 35%),
@@ -981,9 +990,8 @@ body {
 .site-theme h3,
 .site-theme .page-title,
 .site-theme .section-title,
-.site-theme .company-name,
 .site-theme .cta-title {
-    font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, Georgia, serif;
+    font-family: 'Montserrat', 'Segoe UI Variable Text', 'Inter', 'Segoe UI', Arial, sans-serif;
     letter-spacing: 0.02em;
 }
 
