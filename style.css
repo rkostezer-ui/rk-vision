@@ -2781,3 +2781,29 @@ body.services-page .service-card .service-image .asset-img {
         margin: -30px -24px 18px;
     }
 }
+
+/* ===== Fixes: Partner-Titel, Zentrierung Box 1, Mobile Dienstleistungen ===== */
+/* 1) Strich unter "Partnerschaften" sicher anzeigen */
+body.site-theme .partners-section .section-header .section-title::after {
+    content: "" !important;
+    display: block;
+}
+
+/* 2) Startseite: Erste Dienstleistungsbox vertikal mittig ausrichten */
+body.site-theme .services-preview .service-card--automation .service-content {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 3) Mobile: "Unsere Dienstleistungen" skalieren, damit kein erzwungenes Scrollen entsteht */
+@media (max-width: 768px) {
+    body.site-theme .services-preview .section-title {
+        font-size: clamp(1.5rem, 7vw, 2rem) !important;
+        line-height: 1.2;
+        letter-spacing: 0.5px;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+    }
+}
