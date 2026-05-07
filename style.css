@@ -802,29 +802,29 @@ body {
 
 /* ===== Site Theme: anthrazit, freundlich-frisch und elegant ===== */
 body.site-theme {
-    background: linear-gradient(160deg, #1f242b 0%, #262c34 45%, #1d2625 100%);
-    color: #eef2f6;
+    background: linear-gradient(150deg, #d8c7ae 0%, #c8b297 45%, #bfa488 100%);
+    color: #2f241a;
 }
 
 body.site-theme .background-texture {
     background-image:
-        radial-gradient(circle at 20% 22%, rgba(142, 188, 236, 0.11) 1px, transparent 1px),
-        radial-gradient(circle at 78% 72%, rgba(95, 194, 171, 0.1) 1px, transparent 1px);
+        radial-gradient(circle at 20% 22%, rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+        radial-gradient(circle at 78% 72%, rgba(110, 78, 48, 0.08) 1px, transparent 1px);
     background-size: 56px 56px;
     opacity: 0.38;
 }
 
 body.site-theme .background-structure {
     background-image:
-        linear-gradient(140deg, transparent 0%, rgba(116, 145, 178, 0.12) 35%, transparent 65%),
-        linear-gradient(40deg, transparent 0%, rgba(77, 165, 146, 0.1) 48%, transparent 100%);
+        linear-gradient(140deg, transparent 0%, rgba(255, 255, 255, 0.14) 35%, transparent 65%),
+        linear-gradient(40deg, transparent 0%, rgba(130, 98, 67, 0.12) 48%, transparent 100%);
     opacity: 0.32;
 }
 
 body.site-theme .navigation,
 body.site-theme .navigation.scrolled {
-    background: rgba(24, 29, 35, 0.9);
-    border-bottom: 1px solid rgba(182, 201, 221, 0.2);
+    background: rgba(75, 56, 38, 0.82);
+    border-bottom: 1px solid rgba(255, 239, 219, 0.35);
 }
 
 body.site-theme .nav-logo,
@@ -837,7 +837,7 @@ body.site-theme .contact-value,
 body.site-theme .cta-title,
 body.site-theme .page-title,
 body.site-theme .contact-form-title {
-    color: #f2f6fa;
+    color: #fff9f1;
 }
 
 body.site-theme .tagline,
@@ -851,21 +851,21 @@ body.site-theme .section-text,
 body.site-theme .page-subtitle,
 body.site-theme .contact-text,
 body.site-theme .form-row label {
-    color: #c2ceda;
+    color: #f4e5d3;
 }
 
 body.site-theme .nav-item a {
     border-radius: 999px;
-    border: 1px solid rgba(176, 197, 219, 0.26);
-    background: rgba(236, 244, 252, 0.06);
+    border: 1px solid rgba(255, 232, 202, 0.45);
+    background: rgba(255, 247, 236, 0.08);
     box-shadow: none;
 }
 
 body.site-theme .nav-item a:hover,
 body.site-theme .nav-item a.active {
-    background: rgba(116, 163, 212, 0.2);
-    color: #f8fbff;
-    border-color: rgba(139, 189, 240, 0.5);
+    background: rgba(255, 232, 202, 0.24);
+    color: #fffdf8;
+    border-color: rgba(255, 242, 224, 0.7);
 }
 
 body.site-theme .nav-toggle span {
@@ -888,24 +888,59 @@ body.site-theme .cta-section {
 
 body.site-theme .service-card,
 body.site-theme .project-card,
+body.site-theme .partner-card,
 body.site-theme .contact-quickbar-item,
 body.site-theme .contact-item,
 body.site-theme .contact-form-card,
 body.site-theme .map-card {
-    background: rgba(235, 244, 252, 0.06);
-    border: 1px solid rgba(170, 193, 218, 0.24);
+    background: rgba(255, 249, 240, 0.12);
+    border: 1px solid rgba(255, 235, 210, 0.4);
     border-radius: 16px;
-    box-shadow: 0 14px 30px rgba(8, 14, 22, 0.3);
+    box-shadow: 0 12px 24px rgba(74, 53, 34, 0.18);
 }
 
 body.site-theme .service-card:hover,
 body.site-theme .project-card:hover,
+body.site-theme .partner-card:hover,
 body.site-theme .contact-quickbar-item:hover,
 body.site-theme .contact-item:hover {
-    background: rgba(235, 244, 252, 0.1);
-    border-color: rgba(136, 189, 242, 0.48);
-    box-shadow: 0 22px 36px rgba(8, 14, 22, 0.4);
+    background: rgba(255, 250, 244, 0.2);
+    border-color: rgba(255, 241, 223, 0.75);
+    box-shadow: 0 16px 28px rgba(74, 53, 34, 0.24);
     transform: translateY(-4px);
+}
+
+.partners-section {
+    padding: 80px 0;
+}
+
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+}
+
+.partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 140px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.partner-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.partner-name {
+    color: #fff8ef;
+    font-weight: 600;
+    text-align: center;
 }
 
 body.site-theme .projects-preview .project-image {
@@ -1474,7 +1509,7 @@ body.site-theme .cta-button:hover::after {
 }
 
 .site-theme .logo-img {
-    height: 32px;
+    height: 44px;
     width: auto;
     object-fit: contain;
     filter: none;
@@ -1522,10 +1557,21 @@ body.site-theme .cta-button:hover::after {
 }
 
 .site-theme .company-name {
+    font-family: 'Montserrat', 'Segoe UI Variable Text', 'Inter', 'Segoe UI', Arial, sans-serif;
     font-size: clamp(1.9rem, 3.4vw, 3rem);
     color: #ffffff;
-    font-weight: 500;
-    letter-spacing: 1.4px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.site-theme .company-name .rk-brand {
+    font-family: 'Abril Fatface', serif;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.site-theme .company-name .vision-brand {
+    font-family: 'Montserrat', 'Segoe UI Variable Text', 'Inter', 'Segoe UI', Arial, sans-serif;
 }
 
 .site-theme .tagline {
@@ -1558,44 +1604,57 @@ body.site-theme .cta-button:hover::after {
 /* Home: Bildhintergründe für Dienstleistungen mit transparenter Wirkung */
 .site-theme .services-preview .service-card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    isolation: isolate;
+    background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+    border: 1px solid rgba(152, 190, 228, 0.42);
 }
 
 .site-theme .services-preview .service-card::before {
     content: "";
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #7aa7d4 0%, #57c4b0 100%);
+    opacity: 0.95;
+}
+
+.site-theme .services-preview .service-image {
+    width: 100%;
+    height: 170px;
+    position: relative;
+    overflow: hidden;
+    background: rgba(37, 40, 45, 0.35);
+}
+
+.site-theme .services-preview .service-image .asset-img {
+    position: absolute;
     inset: 0;
-    z-index: -2;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transform: scale(1.04);
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
     transition: transform 0.35s ease;
 }
 
-.site-theme .services-preview .service-card::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: linear-gradient(160deg, rgba(17, 21, 27, 0.72), rgba(17, 21, 27, 0.58));
+.site-theme .services-preview .service-content {
+    padding: 24px 24px 26px;
+    text-align: center;
 }
 
-.site-theme .services-preview .service-card:hover::before {
-    transform: scale(1.08);
+.site-theme .services-preview .service-card:hover .service-image .asset-img {
+    transform: scale(1.06);
 }
 
-.site-theme .services-preview .service-card--automation::before {
-    background-image: url('assets/img/service-automation.jpeg');
+.site-theme .services-preview .service-title {
+    color: #f8f5ef;
 }
 
-.site-theme .services-preview .service-card--planung::before {
-    background-image: url('assets/img/service-elektroplanung.jpeg');
-}
-
-.site-theme .services-preview .service-card--engineering::before {
-    background-image: url('assets/img/service-engineering.jpeg');
+.site-theme .services-preview .service-description {
+    color: rgba(248, 245, 239, 0.9);
 }
 
 .site-theme .service-card:hover,
@@ -1699,7 +1758,7 @@ body.services-page .service-card::before {
     left: 0;
     width: 100%;
     height: 3px;
-    background: linear-gradient(90deg, #6ea7de 0%, #4dc7a4 100%);
+    background: linear-gradient(90deg, #7aa7d4 0%, #57c4b0 100%);
     opacity: 0.85;
 }
 
@@ -1714,7 +1773,7 @@ body.services-page .service-icon {
     height: 72px;
     margin: 0 auto 18px;
     border-radius: 14px;
-    background: linear-gradient(145deg, rgba(110, 167, 222, 0.26), rgba(77, 199, 164, 0.14));
+    background: linear-gradient(145deg, rgba(122, 167, 212, 0.3), rgba(87, 196, 176, 0.16));
     border: 1px solid rgba(163, 196, 227, 0.35);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
 }
@@ -1739,7 +1798,7 @@ body.services-page .service-features li:last-child {
 }
 
 body.services-page .service-features li::before {
-    color: #8cc4f8;
+    color: #74a3d4;
 }
 
 @media (max-width: 768px) {
@@ -1863,8 +1922,32 @@ body.services-page .service-features li::before {
     inset: 0;
     background:
         radial-gradient(64% 56% at 50% 16%, rgba(107, 170, 232, 0.2) 0%, rgba(107, 170, 232, 0) 74%),
-        radial-gradient(50% 42% at 72% 84%, rgba(86, 205, 171, 0.14) 0%, rgba(86, 205, 171, 0) 74%);
+        radial-gradient(50% 42% at 72% 84%, rgba(87, 196, 176, 0.14) 0%, rgba(87, 196, 176, 0) 74%);
     pointer-events: none;
+}
+
+.site-theme .hero-container--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 500px);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+}
+
+.site-theme .hero-container--split .hero-content {
+    margin-bottom: 0;
+    text-align: left;
+}
+
+.site-theme .hero-media {
+    width: 100%;
+}
+
+.site-theme .hero-media-img {
+    width: 100%;
+    display: block;
+    border-radius: 18px;
+    border: 1px solid rgba(148, 188, 226, 0.35);
+    box-shadow: 0 24px 44px rgba(7, 14, 22, 0.45);
 }
 
 .site-theme .hero-eyebrow {
@@ -2069,6 +2152,133 @@ body.services-page .service-features li::before {
     }
 }
 
+/* ===== FINAL FIX (User Request): zurück zu Anthrazit + CTA Beige ===== */
+/* Gesamt-Design wieder anthrazit */
+body.site-theme {
+    background: linear-gradient(145deg, #161a1f 0%, #1f242c 45%, #15191e 100%);
+    color: #f1f3f5;
+}
+
+body.site-theme .navigation,
+body.site-theme .navigation.scrolled {
+    background: rgba(26, 26, 26, 0.95);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Dienstleistungs-Boxen: keine beige Umfärbung, keine blau/grüne Top-Leiste */
+body.site-theme .services-preview .service-card,
+body.site-theme .services-page .service-card,
+body.site-theme body.services-page .service-card,
+body.services-page.site-theme .service-card,
+body.services-page .service-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 14px 28px rgba(8, 14, 22, 0.28);
+}
+
+body.site-theme .services-preview .service-card:hover,
+body.services-page .service-card:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.28);
+}
+
+body.site-theme .services-preview .service-card::before,
+body.services-page .service-card::before {
+    content: none;
+    background: none;
+}
+
+body.services-page .service-icon {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Buttons Projektanfragen + Kontaktformular wieder mit Beige-Farbverlauf */
+body.site-theme .cta-button,
+body .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(160deg, #d8c7ae 0%, #c8b297 50%, #bfa488 100%);
+    color: #2f241a;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 1px solid rgba(255, 239, 219, 0.55);
+    box-shadow: 0 10px 22px rgba(74, 53, 34, 0.26);
+}
+
+body.site-theme .cta-button:hover,
+body .cta-button:hover {
+    background: linear-gradient(160deg, #e1d2bc 0%, #cfbca4 50%, #c5ad93 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(74, 53, 34, 0.32);
+}
+
+/* Vorheriger Site-Theme Arrow/Button-Look deaktivieren */
+body.site-theme .cta-button::before,
+body.site-theme .cta-button::after,
+body .cta-button::before,
+body .cta-button::after {
+    content: none;
+}
+
+/* ===== FINAL OVERRIDE: Beige Theme + Partners (Home) ===== */
+body.site-theme {
+    background: linear-gradient(150deg, #d8c7ae 0%, #c8b297 45%, #bfa488 100%);
+    color: #2f241a;
+}
+
+body.site-theme .navigation,
+body.site-theme .navigation.scrolled {
+    background: rgba(75, 56, 38, 0.82);
+    border-bottom: 1px solid rgba(255, 239, 219, 0.35);
+}
+
+body.site-theme .partners-section {
+    padding: 80px 0;
+}
+
+body.site-theme .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+}
+
+body.site-theme .partner-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 140px;
+    text-decoration: none;
+    background: rgba(255, 249, 240, 0.2);
+    border: 1px solid rgba(255, 235, 210, 0.55);
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(74, 53, 34, 0.18);
+    transition: all 0.25s ease;
+}
+
+body.site-theme .partner-card:hover {
+    background: rgba(255, 250, 244, 0.28);
+    border-color: rgba(255, 241, 223, 0.85);
+    box-shadow: 0 16px 28px rgba(74, 53, 34, 0.24);
+    transform: translateY(-4px);
+}
+
+body.site-theme .partner-logo {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+body.site-theme .partner-name {
+    color: #fff8ef;
+    font-weight: 600;
+    text-align: center;
+}
+
 /* ===== Neue Home Varianten D/E/F ===== */
 /* D: Logo als Top-Marke klein, Firmenname dominant darunter */
 .home-variant-d.site-theme .hero--fresh .hero-content {
@@ -2183,13 +2393,44 @@ body.services-page .service-features li::before {
 
 .site-theme .hero--fresh .tagline {
     max-width: 780px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.site-theme .variant-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.18);
+}
+
+.site-theme .variant-switch label {
+    font-size: 0.85rem;
+    color: #d9c8b3;
+    font-weight: 500;
+}
+
+.site-theme .variant-switch-select {
+    border: 1px solid rgba(255,255,255,0.24);
+    background: rgba(26, 30, 36, 0.92);
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 7px 10px;
+    font-size: 0.9rem;
+}
+
+.site-theme .variant-switch-select:focus {
+    outline: none;
+    border-color: rgba(255,255,255,0.55);
 }
 
 .site-theme .hero-actions {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: 18px;
 }
 
@@ -2201,9 +2442,9 @@ body.services-page .service-features li::before {
     min-height: 50px;
     padding: 14px 26px;
     border-radius: 999px;
-    border: 1px solid rgba(214, 196, 166, 0.5);
-    background: linear-gradient(135deg, #2f3338 0%, #d8c8ab 100%);
-    color: #f8f5ef;
+    border: 1px solid rgba(145, 190, 232, 0.5);
+    background: linear-gradient(135deg, #2f3338 0%, #77a8d8 55%, #56c5b0 100%);
+    color: #f4f9ff;
     text-decoration: none;
     text-transform: none;
     letter-spacing: 0.01em;
@@ -2301,6 +2542,13 @@ body.services-page .service-features li::before {
 }
 
 @media (max-width: 680px) {
+    .site-theme .variant-switch {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
     .site-theme .hero-eyebrow {
         margin-bottom: 18px;
         font-size: 0.69rem;
@@ -2308,6 +2556,28 @@ body.services-page .service-features li::before {
 
     .site-theme .hero--fresh .company-name {
         font-size: clamp(1.75rem, 8vw, 2.3rem);
+    }
+
+    .site-theme .hero-container--split {
+        grid-template-columns: 1fr;
+    }
+
+    .site-theme .hero-container--split .hero-content {
+        text-align: center;
+    }
+
+    .site-theme .hero--fresh .tagline {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .site-theme .hero-actions {
+        justify-content: center;
+    }
+
+    .site-theme .hero-media {
+        max-width: 560px;
+        margin: 0 auto;
     }
 
     .site-theme .contact-grid--pro {
@@ -2318,5 +2588,196 @@ body.services-page .service-features li::before {
     .site-theme .contact-grid--pro .contact-item--clean:nth-child(2),
     .site-theme .contact-grid--pro .contact-item--clean:nth-child(n+3) {
         grid-column: auto;
+    }
+}
+
+/* ===== ABSCHLIESSENDER OVERRIDE (Kundenwunsch) ===== */
+/* 1) Gesamtbild zurück auf anthrazit */
+body.site-theme {
+    background: linear-gradient(145deg, #161a1f 0%, #1f242c 45%, #15191e 100%) !important;
+    color: #f1f3f5 !important;
+}
+
+body.site-theme .navigation,
+body.site-theme .navigation.scrolled {
+    background: rgba(26, 26, 26, 0.95) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+}
+
+/* 2) Dienstleistungs-Boxen: kein Beige, kein blau/grüner Balken */
+body.site-theme .services-preview .service-card,
+body.services-page .service-card {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    box-shadow: 0 14px 28px rgba(8, 14, 22, 0.28) !important;
+}
+
+body.site-theme .services-preview .service-card:hover,
+body.services-page .service-card:hover {
+    background: rgba(255,255,255,0.1) !important;
+    border-color: rgba(255,255,255,0.28) !important;
+}
+
+body.site-theme .services-preview .service-card::before,
+body.services-page .service-card::before {
+    content: none !important;
+    background: none !important;
+}
+
+body.services-page .service-icon {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* 3) Buttons "Projektanfragen" + Kontaktformular wieder mit Beige-Verlauf */
+body .cta-button,
+body.site-theme .cta-button,
+body .cta-button.cta-button--primary,
+body.site-theme .cta-button.cta-button--primary {
+    display: inline-block !important;
+    padding: 15px 30px !important;
+    min-height: unset !important;
+    background: linear-gradient(160deg, #d8c7ae 0%, #c8b297 50%, #bfa488 100%) !important;
+    color: #2f241a !important;
+    border: 1px solid rgba(255, 239, 219, 0.55) !important;
+    border-radius: 8px !important;
+    text-decoration: none !important;
+    text-transform: none !important;
+    letter-spacing: 0.01em !important;
+    font-weight: 600 !important;
+    box-shadow: 0 10px 22px rgba(74, 53, 34, 0.26) !important;
+}
+
+body .cta-button:hover,
+body.site-theme .cta-button:hover,
+body .cta-button.cta-button--primary:hover,
+body.site-theme .cta-button.cta-button--primary:hover {
+    background: linear-gradient(160deg, #e1d2bc 0%, #cfbca4 50%, #c5ad93 100%) !important;
+    color: #2a2017 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 26px rgba(74, 53, 34, 0.32) !important;
+    filter: none !important;
+}
+
+body .cta-button::before,
+body .cta-button::after,
+body.site-theme .cta-button::before,
+body.site-theme .cta-button::after,
+body .cta-button.cta-button--primary::before,
+body .cta-button.cta-button--primary::after,
+body.site-theme .cta-button.cta-button--primary::before,
+body.site-theme .cta-button.cta-button--primary::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* 4) Einheitliche Typografie: Texte beige, Übertitel weiss */
+body.site-theme,
+body.site-theme p,
+body.site-theme li,
+body.site-theme .tagline,
+body.site-theme .section-subtitle,
+body.site-theme .service-description,
+body.site-theme .project-description,
+body.site-theme .project-category,
+body.site-theme .section-text,
+body.site-theme .value-description,
+body.site-theme .member-description,
+body.site-theme .contact-text,
+body.site-theme .contact-form-subtitle,
+body.site-theme .faq-answer,
+body.site-theme .cta-text,
+body.site-theme .contact-label,
+body.site-theme .form-row label,
+body.site-theme .contact-value,
+body.site-theme .service-features li,
+body.site-theme .project-details li {
+    color: #e6d6c2 !important;
+}
+
+body.site-theme h1,
+body.site-theme h2,
+body.site-theme h3,
+body.site-theme .page-title,
+body.site-theme .section-title,
+body.site-theme .service-title,
+body.site-theme .project-title,
+body.site-theme .cta-title,
+body.site-theme .contact-form-title {
+    color: #ffffff !important;
+}
+
+/* 5) Startseite: störenden dunkel->beige Verlauf neutralisieren */
+body.site-theme .hero--fresh::before {
+    background:
+        radial-gradient(60% 50% at 50% 14%, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 72%),
+        radial-gradient(48% 40% at 72% 84%, rgba(170,180,195,0.08) 0%, rgba(170,180,195,0) 72%) !important;
+}
+
+/* 6) Header-Logo präsenter und sauber eingebettet */
+body.site-theme .nav-logo {
+    padding: 6px 10px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.28);
+}
+
+body.site-theme .logo-img {
+    height: 36px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
+    transform-origin: center;
+    animation: logoSpinEvery6s 6s ease-in-out infinite;
+}
+
+body.site-theme .nav-logo:hover {
+    background: rgba(255,255,255,0.09);
+    border-color: rgba(255,255,255,0.24);
+}
+
+@keyframes logoSpinEvery6s {
+    0%, 88% {
+        transform: rotate(0deg);
+    }
+    96% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Startseite: Obertitel grösser */
+body.site-theme .services-preview .section-title,
+body.site-theme .projects-preview .section-title,
+body.site-theme .partners-section .section-title,
+body.site-theme .contact-section .section-title {
+    font-size: clamp(1.9rem, 3.8vw, 2.7rem) !important;
+}
+
+/* Dienstleistungen-Seite: Bilder statt Quadrat-Optik, in Home-ähnlicher Grösse */
+body.services-page .service-card .service-image {
+    height: 170px;
+    margin: -40px -40px 22px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px 10px 0 0;
+    background: rgba(37, 40, 45, 0.35);
+}
+
+body.services-page .service-card .service-image .asset-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    body.services-page .service-card .service-image {
+        margin: -30px -24px 18px;
     }
 }

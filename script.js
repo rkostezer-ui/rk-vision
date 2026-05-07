@@ -91,10 +91,11 @@
     const typerEl = document.getElementById('serviceTyperText');
     if (typerEl) {
         const words = [
-            'Elektroplanung',
+            'Elektroplanungen',
             'Gebäudeautomation',
-            'Hardwareengineering',
-            'Softwareengineering'
+            'Smart Home',
+            'Hardware-Engineering',
+            'Software-Engineering'
         ];
 
         let wordIndex = 0;

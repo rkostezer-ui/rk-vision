@@ -21,7 +21,7 @@
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="X-XSS-Protection" content="1; mode=block">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://www.google.com https://maps.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' mailto:;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://cdn.simpleicons.org; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; frame-src 'self' https://www.google.com https://maps.google.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formsubmit.co;">
     <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()">
     <title>RK-Vision GmbH | Gebäudeautomation für EFH und MFH | Obere Bahnhofstrasse 52, Wil, Switzerland</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -60,7 +60,7 @@
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
                 <img src="assets/icons/Logo.avif" alt="RK-Vision Logo" class="logo-img">
-                <span class="brand-name">RK-Vision GmbH</span>
+                <span class="brand-name"></span>
             </a>
             <ul class="nav-menu" id="navMenu">
                 <li class="nav-item"><a href="index.html" class="active">Home</a></li>
@@ -79,10 +79,10 @@
 
     <main>
     <section class="hero hero--fresh">
-        <div class="hero-container">
+        <div class="hero-container hero-container--split">
             <div class="hero-content">
                 <div class="brand-lockup" aria-label="Firmenname RK-Vision GmbH">
-                    <div class="company-name">RK-Vision GmbH</div>
+                    <div class="company-name"><span class="rk-brand">RK</span><span class="vision-brand">-Vision GmbH</span></div>
                 </div>
                 <p class="service-typer" aria-live="polite" aria-atomic="true">
                     <span id="serviceTyperText"></span><span class="type-caret" aria-hidden="true"></span>
@@ -91,8 +91,11 @@
                     Ihr Partner für Elektrodienstleistungen im Bereich der Gebäudeautomation, Elektroplanung sowie Hard- und Softwareengineering.
                 </div>
                 <div class="hero-actions">
-                    <a href="kontakt.html" class="cta-button cta-button--primary">Projekt anfragen</a>
+                    <a href="kontakt.html#kontaktformular" class="cta-button cta-button--primary">Projekt anfragen</a>
                 </div>
+            </div>
+            <div class="hero-media">
+                <img src="assets/icons/Home_Smarthome.png" alt="Smarthome Visualisierung von RK-Vision GmbH" class="hero-media-img">
             </div>
         </div>
     </section>
@@ -106,6 +109,7 @@
 
             <div class="services-grid">
                 <div class="service-card service-card--automation" data-href="dienstleistungen.html#automation" role="link" tabindex="0">
+                    <div class="service-content">
                     <div class="service-icon">
                         <img src="assets/icons/automation.svg" alt="" class="icon-img">
                         <span class="icon-fallback">■</span>
@@ -114,9 +118,11 @@
                     <p class="service-description">
                         Professionelle Beratung, massgeschneiderte Entwicklung und fachgerechte Inbetriebnahme für Ihr smartes Projekt.
                     </p>
+                    </div>
                 </div>
 
                 <div class="service-card service-card--planung" data-href="dienstleistungen.html#planning" role="link" tabindex="0">
+                    <div class="service-content">
                     <div class="service-icon">
                         <img src="assets/icons/planning.svg" alt="" class="icon-img">
                         <span class="icon-fallback">▲</span>
@@ -125,17 +131,20 @@
                     <p class="service-description">
                         strategische Beratung, technische Apparate- und Ausführungsplanung sowie normgerechte NPK-Ausschreibungen
                     </p>
+                    </div>
                 </div>
 
                 <div class="service-card service-card--engineering" data-href="dienstleistungen.html#engineering" role="link" tabindex="0">
+                    <div class="service-content">
                     <div class="service-icon">
                         <img src="assets/icons/engineering.svg" alt="" class="icon-img">
                         <span class="icon-fallback">●</span>
                     </div>
-                    <h3 class="service-title">Hardware & Softwareengineering</h3>
+                    <h3 class="service-title">Hardware & Software-Engineering</h3>
                     <p class="service-description">
                         Hard- und Softwareentwicklung für kundenspezifische Automatisierungslösungen.
                     </p>
+                    </div>
                 </div>
                     
             </div>
@@ -193,6 +202,38 @@
         </div>
     </section>
 
+    <section class="partners-section" aria-labelledby="partners-heading">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title" id="partners-heading">Partnerschaften</h2>
+                <p class="section-subtitle">Mit starken Partnern für zuverlässige, zukunftsfähige Lösungen</p>
+            </div>
+
+            <div class="partners-grid">
+                <a class="partner-card" href="https://www.loxone.com/dech/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/Loxone_Logo.jpg" alt="Loxone Logo" class="partner-logo">
+                    <span class="partner-name"></span>
+                </a>
+                <a class="partner-card" href="https://www.knx.org/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/KNX_logo.png" alt="KNX Logo" class="partner-logo">
+                    <span class="partner-name"></span>
+                </a>
+                <a class="partner-card" href="https://www.wago.com/ch-de" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/Wago_Logo.png" alt="WAGO Logo" class="partner-logo">
+                    <span class="partner-name"></span>
+                </a>
+                <a class="partner-card" href="https://www.smart-me.com/" target="_blank" rel="noopener noreferrer">
+                    <img src="https://cdn.simpleicons.org/smart/111111" alt="Smart-Me Logo" class="partner-logo">
+                    <span class="partner-name"></span>
+                </a>
+                <a class="partner-card" href="https://www.guk.ch/" target="_blank" rel="noopener noreferrer">
+                    <img src="assets/icons/Rüetschi_Logo.png" alt="Glockengiesserei Rüetschi Logo" class="partner-logo">
+                    <span class="partner-name"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <div class="section-container">
             <div class="section-header">
@@ -212,7 +253,7 @@
             </div>
 
             <div class="cta-wrap cta-wrap--wide">
-                <a href="kontakt.html" class="cta-button cta-button--primary cta-button--block">Zum Kontaktformular</a>
+                <a href="kontakt.html#kontaktformular" class="cta-button cta-button--primary cta-button--block">Zum Kontaktformular</a>
             </div>
         </div>
     </section>
