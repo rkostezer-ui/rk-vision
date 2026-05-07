@@ -2807,3 +2807,30 @@ body.site-theme .services-preview .service-card--automation .service-content {
         overflow-wrap: anywhere;
     }
 }
+
+/* ===== Nachkorrektur gemäss Feedback ===== */
+/* A) Dienstleistungen-Seite: Titel mobil so skalieren, dass kein horizontaler Scroll nötig ist */
+@media (max-width: 768px) {
+    body.services-page .page-header .page-title {
+        font-size: clamp(1.55rem, 8vw, 2.05rem) !important;
+        line-height: 1.18;
+        letter-spacing: 0.25px !important;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+}
+
+/* B) Startseite: "Gebäudeautomation" in Box 1 exakt mittig ausrichten */
+body.site-theme .services-preview .service-card--automation .service-content {
+    align-items: center;
+    text-align: center;
+}
+
+body.site-theme .services-preview .service-card--automation .service-title {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+}
