@@ -2948,3 +2948,204 @@ body.site-theme .partners-section .partner-logo {
         padding: 10px;
     }
 }
+
+/* ===== Dienstleistungen-Layout: wie Projekte (Bild oben, Text unten) ===== */
+body.services-page .services-preview--page {
+    padding: 120px 0 80px;
+}
+
+body.services-page .services-preview--page .section-header {
+    margin-bottom: 60px;
+}
+
+body.services-page .services-preview--page .section-title {
+    margin-bottom: 0;
+}
+
+body.services-page .services-grid--detail {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+body.services-page .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 34px;
+}
+
+body.services-page .service-card {
+    display: block;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    box-shadow: 0 14px 28px rgba(8, 14, 22, 0.28) !important;
+}
+
+body.services-page .service-card .service-image {
+    width: 100%;
+    height: 220px;
+    min-height: 220px;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    overflow: hidden;
+    background: rgba(20, 24, 30, 0.28);
+}
+
+body.services-page .service-card .service-image .asset-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.35s ease;
+}
+
+body.services-page .service-card:hover .service-image .asset-img {
+    transform: scale(1.04);
+}
+
+body.services-page .service-card .service-content {
+    padding: 26px 26px 24px;
+}
+
+body.services-page .service-card .service-content::before {
+    content: none;
+}
+
+body.services-page .service-card .service-title {
+    margin: 0 0 12px;
+    text-align: left;
+}
+
+body.services-page .service-card .service-description {
+    margin-bottom: 14px;
+    max-width: none;
+}
+
+body.services-page .service-card .service-features {
+    margin-top: 0;
+}
+
+body.services-page .service-card .service-features li {
+    border-bottom: 0;
+    padding: 5px 0;
+}
+
+@media (max-width: 768px) {
+    body.services-page .services-preview--page {
+        padding: 105px 0 60px;
+    }
+
+    body.services-page .services-preview--page .section-header {
+        margin-bottom: 38px;
+    }
+
+    body.services-page .services-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    body.services-page .service-card .service-image {
+        height: 190px;
+        min-height: 190px;
+    }
+
+    body.services-page .service-card .service-content {
+        padding: 22px 20px 20px;
+    }
+}
+
+/* ===== Dienstleistungen: Split-Layout wie gewünscht (Titel wie Home, links/rechts abwechselnd) ===== */
+body.services-page .services-preview--page .section-container {
+    display: grid;
+    gap: 0;
+}
+
+body.services-page .service-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+    gap: clamp(22px, 4vw, 56px);
+    align-items: center;
+    padding: clamp(28px, 4vw, 44px) 0;
+    border-top: 1px solid rgba(255,255,255,0.14);
+}
+
+body.services-page .service-split:last-child {
+    border-bottom: 1px solid rgba(255,255,255,0.14);
+}
+
+body.services-page .service-split--reverse {
+    grid-template-columns: minmax(320px, 520px) minmax(0, 1fr);
+}
+
+body.services-page .service-split--reverse .service-split-text {
+    order: 2;
+}
+
+body.services-page .service-split--reverse .service-split-media {
+    order: 1;
+}
+
+body.services-page .service-split-title.section-title {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.2;
+    margin: 0 0 18px;
+    text-align: left;
+}
+
+body.services-page .service-split-text .service-description {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    max-width: 72ch;
+}
+
+body.services-page .service-split-text .service-features {
+    margin: 0;
+    padding: 0;
+}
+
+body.services-page .service-split-media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.05);
+    box-shadow: 0 14px 28px rgba(8, 14, 22, 0.28);
+}
+
+body.services-page .service-split-media .asset-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@media (max-width: 768px) {
+    body.services-page .service-split,
+    body.services-page .service-split--reverse {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 28px 0;
+    }
+
+    body.services-page .service-split--reverse .service-split-text,
+    body.services-page .service-split--reverse .service-split-media {
+        order: unset;
+    }
+
+    body.services-page .service-split-title.section-title {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+        letter-spacing: 0.5px;
+        margin-bottom: 12px;
+    }
+}
