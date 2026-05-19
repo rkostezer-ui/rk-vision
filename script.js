@@ -1,6 +1,9 @@
 (() => {
     // Scoped script to avoid globals and improve maintainability
 
+    const GA_MEASUREMENT_ID = 'G-396XKEE75D';
+    const CONSENT_KEY = 'rk_cookie_consent';
+
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
     const nav = document.querySelector('.navigation');
@@ -138,6 +141,72 @@
         }
 
         tick();
+    }
+
+    // Cookie-Consent + GA (Homepage)
+    const isHomePage = /(?:^|\/)index\.html$/i.test(window.location.pathname) || window.location.pathname === '/';
+
+    function loadGoogleAnalytics() {
+        if (window.__rkGaLoaded) return;
+        window.__rkGaLoaded = true;
+
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
+        window.gtag('js', new Date());
+        window.gtag('config', GA_MEASUREMENT_ID);
+
+        const gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+        document.head.appendChild(gaScript);
+    }
+
+    function createCookieBanner() {
+        const banner = document.createElement('div');
+        banner.className = 'cookie-banner';
+        banner.setAttribute('role', 'dialog');
+        banner.setAttribute('aria-live', 'polite');
+        banner.innerHTML = `
+            <div class="cookie-banner__content">
+                <p class="cookie-banner__text">
+                    Wir verwenden Cookies für Statistik und zur Verbesserung der Website (Google Analytics).
+                    Möchten Sie zustimmen?
+                </p>
+                <div class="cookie-banner__actions">
+                    <button type="button" class="cookie-banner__btn cookie-banner__btn--accept">Akzeptieren</button>
+                    <button type="button" class="cookie-banner__btn cookie-banner__btn--decline">Ablehnen</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(banner);
+
+        const acceptBtn = banner.querySelector('.cookie-banner__btn--accept');
+        const declineBtn = banner.querySelector('.cookie-banner__btn--decline');
+
+        if (acceptBtn) {
+            acceptBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'accepted');
+                loadGoogleAnalytics();
+                banner.remove();
+            });
+        }
+
+        if (declineBtn) {
+            declineBtn.addEventListener('click', () => {
+                localStorage.setItem(CONSENT_KEY, 'declined');
+                banner.remove();
+            });
+        }
+    }
+
+    if (isHomePage) {
+        const consent = localStorage.getItem(CONSENT_KEY);
+        if (consent === 'accepted') {
+            loadGoogleAnalytics();
+        } else if (!consent) {
+            createCookieBanner();
+        }
     }
 
 })();

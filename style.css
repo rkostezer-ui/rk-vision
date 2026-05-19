@@ -700,7 +700,11 @@ body {
 }
 
 .container-contact-page {
-    padding-top: 120px;
+    padding-top: 8px;
+}
+
+.container-contact-page--compact {
+    padding-top: 8px !important;
 }
 
 /* Animations */
@@ -798,6 +802,55 @@ body {
     .container {
         padding: 100px 20px 40px; /* Anpassung für alle Container auf Unterseiten */
     }
+}
+
+/* ===== FINAL OVERRIDE: Horizontaler Verlauf auf allen Seiten und Boxen ===== */
+body.site-theme,
+body.site-theme .hero,
+body.site-theme .services-preview,
+body.site-theme .projects-preview,
+body.site-theme .partners-section,
+body.site-theme .contact-section,
+body.site-theme .legal-page {
+    background: linear-gradient(90deg, #161a1f 0%, #1f242c 50%, #15191e 100%) !important;
+}
+
+/* Gesamter Seitenhintergrund durchgehend mit Verlauf */
+html,
+body.site-theme {
+    background: linear-gradient(90deg, #161a1f 0%, #1f242c 50%, #15191e 100%) !important;
+}
+
+/* Sektionen transparent, damit der Seitenverlauf überall sichtbar bleibt */
+body.site-theme .hero,
+body.site-theme .services-preview,
+body.site-theme .projects-preview,
+body.site-theme .partners-section,
+body.site-theme .contact-section,
+body.site-theme .legal-page,
+body.site-theme .cta-section {
+    background: transparent !important;
+}
+
+body.site-theme .service-card,
+body.site-theme .project-card,
+body.site-theme .partner-card,
+body.site-theme .contact-item,
+body.site-theme .contact-quickbar-item,
+body.site-theme .contact-form-card,
+body.site-theme .map-card,
+body.site-theme .content-section,
+body.site-theme .team-section,
+body.site-theme .faq-item,
+body.site-theme .legal-page-card,
+body.site-theme .wil-contact-band {
+    background: linear-gradient(90deg, #161a1f 0%, #1f242c 50%, #15191e 100%) !important;
+}
+
+/* Unterer Bereich mit Logo + Kontaktdaten bleibt schwarz */
+body.site-theme .wil-contact-band,
+body.site-theme .legal-footer {
+    background: #000000 !important;
 }
 
 /* ===== Site Theme: anthrazit, freundlich-frisch und elegant ===== */
@@ -1607,8 +1660,8 @@ body.site-theme .cta-button:hover::after {
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    background: linear-gradient(160deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
-    border: 1px solid rgba(152, 190, 228, 0.42);
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.14);
 }
 
 .site-theme .services-preview .service-card::before {
@@ -1655,6 +1708,25 @@ body.site-theme .cta-button:hover::after {
 
 .site-theme .services-preview .service-description {
     color: rgba(248, 245, 239, 0.9);
+}
+
+/* Home: Dienstleistungsboxen wie "Über uns" (links dunkel, mitte hell, rechts dunkel) */
+.site-theme .services-preview .service-card--automation {
+    background: linear-gradient(90deg, #161a1f 0%, #1b2027 100%) !important;
+}
+
+.site-theme .services-preview .service-card--planung {
+    background: linear-gradient(90deg, #2a3038 0%, #343b45 100%) !important;
+}
+
+.site-theme .services-preview .service-card--engineering {
+    background: linear-gradient(90deg, #161a1f 0%, #1b2027 100%) !important;
+}
+
+.site-theme .services-preview .service-card--automation:hover,
+.site-theme .services-preview .service-card--planung:hover,
+.site-theme .services-preview .service-card--engineering:hover {
+    filter: brightness(1.06);
 }
 
 .site-theme .service-card:hover,
@@ -2598,6 +2670,13 @@ body.site-theme {
     color: #f1f3f5 !important;
 }
 
+body.site-theme .background-texture,
+body.site-theme .background-structure {
+    display: none !important;
+    background: none !important;
+    background-image: none !important;
+}
+
 body.site-theme .navigation,
 body.site-theme .navigation.scrolled {
     background: rgba(26, 26, 26, 0.95) !important;
@@ -2610,6 +2689,11 @@ body.services-page .service-card {
     background: rgba(255,255,255,0.05) !important;
     border: 1px solid rgba(255,255,255,0.14) !important;
     box-shadow: 0 14px 28px rgba(8, 14, 22, 0.28) !important;
+}
+
+body.site-theme .services-preview .service-card {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
 }
 
 body.site-theme .services-preview .service-card:hover,
@@ -2714,13 +2798,13 @@ body.site-theme .hero--fresh::before {
         radial-gradient(48% 40% at 72% 84%, rgba(170,180,195,0.08) 0%, rgba(170,180,195,0) 72%) !important;
 }
 
-/* 6) Header-Logo präsenter und sauber eingebettet */
+/* 6) Header-Logo ohne Box darstellen */
 body.site-theme .nav-logo {
-    padding: 6px 10px;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.14);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.28);
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
 }
 
 body.site-theme .logo-img {
@@ -2729,12 +2813,13 @@ body.site-theme .logo-img {
     display: block;
     filter: drop-shadow(0 2px 6px rgba(0,0,0,0.35));
     transform-origin: center;
-    animation: logoSpinEvery6s 6s ease-in-out infinite;
+    animation: none !important;
+    transform: none !important;
 }
 
 body.site-theme .nav-logo:hover {
-    background: rgba(255,255,255,0.09);
-    border-color: rgba(255,255,255,0.24);
+    background: transparent;
+    border-color: transparent;
 }
 
 @keyframes logoSpinEvery6s {
@@ -2839,7 +2924,7 @@ body.site-theme .services-preview .service-card--automation .service-title {
 .legal-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding: 22px 0;
-    background: rgba(0, 0, 0, 0.18);
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 }
 
 .legal-footer-container {
@@ -2951,7 +3036,7 @@ body.site-theme .partners-section .partner-logo {
 
 /* ===== Dienstleistungen-Layout: wie Projekte (Bild oben, Text unten) ===== */
 body.services-page .services-preview--page {
-    padding: 120px 0 80px;
+    padding: 100px 0 80px;
 }
 
 body.services-page .services-preview--page .section-header {
@@ -3070,11 +3155,56 @@ body.services-page .service-split {
     gap: clamp(22px, 4vw, 56px);
     align-items: center;
     padding: clamp(28px, 4vw, 44px) 0;
-    border-top: 1px solid rgba(255,255,255,0.14);
+    border-top: 0;
+}
+
+body.services-page .service-split-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+body.services-page .service-accordion {
+    width: 100%;
+}
+
+body.services-page .service-accordion summary {
+    list-style: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 2px 0 10px;
+    color: #e6d6c2;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+body.services-page .service-accordion summary::-webkit-details-marker {
+    display: none;
+}
+
+body.services-page .service-accordion summary::before {
+    content: "☰";
+    font-size: 15px;
+    line-height: 1;
+    color: #e6d6c2;
+    transition: transform 0.25s ease;
+}
+
+body.services-page .service-accordion:not([open]) summary::before {
+    transform: rotate(-90deg);
+}
+
+body.services-page .service-accordion .service-split-title.section-title {
+    margin: 0;
+    text-align: left;
 }
 
 body.services-page .service-split:last-child {
-    border-bottom: 1px solid rgba(255,255,255,0.14);
+    border-bottom: 0;
 }
 
 body.services-page .service-split--reverse {
@@ -3107,7 +3237,16 @@ body.services-page .service-split-text .service-description {
 
 body.services-page .service-split-text .service-features {
     margin: 0;
-    padding: 0;
+    padding-left: 18px;
+    list-style: disc;
+}
+
+body.services-page .service-split-text .service-features li {
+    color: #e6d6c2;
+}
+
+body.services-page .service-split-text .service-features li::before {
+    content: none !important;
 }
 
 body.services-page .service-split-media {
@@ -3147,5 +3286,323 @@ body.services-page .service-split-media .asset-img {
         font-size: clamp(1.5rem, 7vw, 2rem);
         letter-spacing: 0.5px;
         margin-bottom: 12px;
+    }
+}
+
+/* ===== Home: Wil Contact Band (Skyline + Kontaktdaten) ===== */
+body.site-theme .contact-section--wil {
+    padding: 0 !important;
+}
+
+body.site-theme .wil-contact-band {
+    margin-top: 0;
+    background: #000000;
+    border-top: 1px solid rgba(221, 236, 255, 0.18);
+    box-shadow: 0 -10px 30px rgba(10, 16, 24, 0.25);
+}
+
+body.site-theme .services-preview .service-card .service-title {
+    text-align: center;
+}
+
+/* Einheitlicher Hintergrundverlauf für alle Haupt-Sektionen */
+body.site-theme .hero,
+body.site-theme .services-preview,
+body.site-theme .projects-preview,
+body.site-theme .partners-section,
+body.site-theme .contact-section {
+    background: linear-gradient(145deg, #161a1f 0%, #1f242c 45%, #15191e 100%) !important;
+}
+
+body.site-theme .wil-skyline {
+    line-height: 0;
+    width: 100%;
+    background: transparent;
+}
+
+body.site-theme .wil-skyline-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+body.site-theme .wil-skyline-caption {
+    margin: 10px 0 0;
+    text-align: center;
+    padding: 0 clamp(20px, 4vw, 40px);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(232, 238, 247, 0.88);
+}
+
+body.site-theme .wil-contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(22px, 3vw, 48px);
+    padding-top: 48px;
+    padding-bottom: 54px;
+}
+
+body.site-theme .wil-col {
+    min-width: 0;
+    text-align: center;
+}
+
+body.site-theme .wil-heading {
+    margin: 0 0 16px;
+    color: #ff4f8b;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+body.site-theme .wil-brand-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.site-theme .wil-brand-logo {
+    width: min(155px, 62%);
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.28));
+}
+
+body.site-theme .wil-brand-name {
+    margin-top: 14px;
+    color: #e8eef7;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+body.site-theme .wil-socials {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+body.site-theme .wil-socials a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #f6fbff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(222, 236, 255, 0.28);
+    transition: all 0.25s ease;
+}
+
+body.site-theme .wil-socials a svg {
+    width: 20px;
+    height: 20px;
+    display: block;
+    fill: currentColor;
+}
+
+body.site-theme .wil-socials a:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 79, 139, 0.24);
+    border-color: rgba(255, 143, 182, 0.55);
+}
+
+body.site-theme .wil-line {
+    margin: 0 0 10px;
+    color: #e8eef7;
+    line-height: 1.5;
+    font-size: 17px;
+}
+
+body.site-theme .wil-line--strong {
+    font-weight: 700;
+}
+
+body.site-theme .wil-line a {
+    color: #e8eef7;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+body.site-theme .wil-line a:hover {
+    border-color: rgba(232, 238, 247, 0.65);
+}
+
+body.site-theme .wil-services-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+body.site-theme .wil-services-list li {
+    color: #f1f6fc;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.35;
+    position: relative;
+    padding-left: 20px;
+}
+
+body.site-theme .wil-services-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: #ff4f8b;
+    transform: translateY(-50%);
+}
+
+body.site-theme .wil-cta-wrap {
+    margin-top: 14px;
+    text-align: center;
+}
+
+body.site-theme .wil-cta-wrap .cta-button {
+    display: inline-block !important;
+}
+
+@media (max-width: 1024px) {
+    body.site-theme .wil-contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    body.site-theme .contact-section--wil {
+        padding-top: 0 !important;
+    }
+
+    body.site-theme .wil-contact-grid {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding-top: 34px;
+        padding-bottom: 38px;
+    }
+
+    body.site-theme .wil-heading {
+        font-size: 22px;
+    }
+
+    body.site-theme .wil-line,
+    body.site-theme .wil-services-list li,
+    body.site-theme .wil-brand-name {
+        font-size: 15px;
+    }
+
+    body.site-theme .wil-brand-logo {
+        width: 132px;
+    }
+
+    body.site-theme .wil-cta-wrap {
+        margin-top: 18px;
+    }
+}
+
+/* Mobile-Feinschliff für den unteren 3er-Block */
+@media (max-width: 768px) {
+    body.site-theme .wil-contact-grid {
+        gap: 22px;
+        padding-top: 30px;
+        padding-bottom: 32px;
+    }
+
+    body.site-theme .wil-col {
+        text-align: center;
+    }
+}
+
+/* Cookie-Banner (Homepage) */
+.cookie-banner {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 2500;
+    background: rgba(18, 22, 28, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(6px);
+}
+
+.cookie-banner__content {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+}
+
+.cookie-banner__text {
+    margin: 0;
+    color: #e6d6c2;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.cookie-banner__actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.cookie-banner__btn {
+    border: 1px solid rgba(255, 255, 255, 0.26);
+    border-radius: 8px;
+    padding: 9px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cookie-banner__btn--accept {
+    background: #d8c7ae;
+    color: #2f241a;
+    border-color: rgba(255, 239, 219, 0.55);
+}
+
+.cookie-banner__btn--accept:hover {
+    background: #e1d2bc;
+}
+
+.cookie-banner__btn--decline {
+    background: transparent;
+    color: #e6d6c2;
+}
+
+.cookie-banner__btn--decline:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    .cookie-banner {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .cookie-banner__content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cookie-banner__actions {
+        width: 100%;
+    }
+
+    .cookie-banner__btn {
+        flex: 1;
     }
 }
