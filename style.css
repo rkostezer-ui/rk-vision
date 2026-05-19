@@ -2874,13 +2874,6 @@ body.site-theme .partners-section .section-header .section-title::after {
     display: block;
 }
 
-/* 2) Startseite: Erste Dienstleistungsbox vertikal mittig ausrichten */
-body.site-theme .services-preview .service-card--automation .service-content {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 /* 3) Mobile: "Unsere Dienstleistungen" skalieren, damit kein erzwungenes Scrollen entsteht */
 @media (max-width: 768px) {
@@ -2904,20 +2897,6 @@ body.site-theme .services-preview .service-card--automation .service-content {
         overflow-wrap: anywhere;
         word-break: break-word;
     }
-}
-
-/* B) Startseite: "Gebäudeautomation" in Box 1 exakt mittig ausrichten */
-body.site-theme .services-preview .service-card--automation .service-content {
-    align-items: center;
-    text-align: center;
-}
-
-body.site-theme .services-preview .service-card--automation .service-title {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    justify-content: center;
 }
 
 /* Rechtliches Footer + Seiten */
@@ -3604,5 +3583,72 @@ body.site-theme .wil-cta-wrap .cta-button {
 
     .cookie-banner__btn {
         flex: 1;
+    }
+}
+
+/* ===== FINAL FIX: Home-Dienstleistungen einheitlich + Titel Box 1 mittig ===== */
+body.site-theme .services-preview .service-card,
+body.site-theme .services-preview .service-card--automation,
+body.site-theme .services-preview .service-card--planung,
+body.site-theme .services-preview .service-card--engineering {
+    background: linear-gradient(90deg, #161a1f 0%, #1f242c 50%, #15191e 100%) !important;
+    border: 1px solid rgba(255, 235, 210, 0.4) !important;
+    border-radius: 16px;
+    box-shadow: 0 12px 24px rgba(74, 53, 34, 0.18);
+}
+
+body.site-theme .services-preview .service-card:hover,
+body.site-theme .services-preview .service-card--automation:hover,
+body.site-theme .services-preview .service-card--planung:hover,
+body.site-theme .services-preview .service-card--engineering:hover {
+    background: linear-gradient(90deg, #1a1f25 0%, #252b33 50%, #191e24 100%) !important;
+    border-color: rgba(255, 241, 223, 0.75) !important;
+    box-shadow: 0 16px 28px rgba(74, 53, 34, 0.24);
+}
+
+body.site-theme .services-preview .service-card--automation .service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body.site-theme .services-preview .service-card--automation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.site-theme .services-preview .service-card--automation .service-title,
+body.site-theme .services-preview .service-card--automation .service-description {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+body.site-theme .services-preview .service-card--automation .service-icon,
+body.site-theme .services-preview .service-card--automation .service-title,
+body.site-theme .services-preview .service-card--automation .service-description {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    body.site-theme .services-preview .service-card--automation,
+    body.site-theme .services-preview .service-card--automation .service-content,
+    body.site-theme .services-preview .service-card--automation .service-title,
+    body.site-theme .services-preview .service-card--automation .service-description {
+        transform: none !important;
+        left: auto !important;
+        right: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
     }
 }

@@ -169,7 +169,7 @@
         banner.innerHTML = `
             <div class="cookie-banner__content">
                 <p class="cookie-banner__text">
-                    Wir verwenden Cookies für Statistik und zur Verbesserung der Website (Google Analytics).
+                    Wir verwenden Cookies für Statistik und zur Verbesserung der Website.
                     Möchten Sie zustimmen?
                 </p>
                 <div class="cookie-banner__actions">
